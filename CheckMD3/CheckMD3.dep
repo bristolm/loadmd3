@@ -1,0 +1,20 @@
+# Microsoft Developer Studio Generated Dependency File, included by CheckMD3.mak
+
+.\CheckMD3.cpp : \
+	"..\include\epic_base.h"\
+	"..\include\epic_skl.h"\
+	"..\include\id_md2.h"\
+	"..\include\id_md3.h"\
+	"..\include\id_md4.h"\
+	"..\include\ParseLWO.h"\
+	"..\include\ParseLWO2.h"\
+	"..\include\ParseLWOcommon.h"\
+	"..\include\ParseMD2.h"\
+	"..\include\ParseMD3.h"\
+	"..\include\ParseMD4.h"\
+	"..\include\ParseMDCommon.h"\
+	"..\include\ParseUnrealSkl.h"\
+	"..\include\sys_base.h"\
+	"..\include\sys_extra.h"\
+	"..\include\sys_math.h"\
+	

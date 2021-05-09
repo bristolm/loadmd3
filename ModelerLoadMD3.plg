@@ -1,0 +1,55 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ModelerLoadMD3 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "E:\DOCUME~1\mike\LOCALS~1\Temp\RSP25A.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "..\lw_sdk6\include" /D "_DEBUG" /D D_X86_=1 /D "WIN32" /D "_CONSOLE" /D "_MBCS" /FR"Debug/" /Fp"Debug/ModelerLoadMD3.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"K:\Source\LoadMd3\LoadQuakeMD.c"
+"K:\Source\LoadMd3\MeshEdt.cpp"
+"K:\Source\LoadMd3\ModelMD3.cpp"
+"K:\Source\LoadMd3\ObjImp.cpp"
+]
+Creating command line "cl.exe @E:\DOCUME~1\mike\LOCALS~1\Temp\RSP25A.tmp" 
+Creating temporary file "E:\DOCUME~1\mike\LOCALS~1\Temp\RSP25B.tmp" with contents
+[
+serv_w.obj server.lib libcmtd.lib kernel32.lib /nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/LoadQuakeMD.pdb" /debug /machine:I386 /nodefaultlib:"libcd" /nodefaultlib:"libc" /out:"LoadQuakeMD.p" /implib:"Debug/LoadQuakeMD.lib" /libpath:"..\lw_sdk6\lib" -export:_mod_descrip 
+.\Debug\LoadQuakeMD.obj
+.\Debug\LWPlugBase.obj
+.\Debug\MeshEdt.obj
+.\Debug\MeshEdt_2.obj
+.\Debug\ModelMD3.obj
+.\Debug\ObjImp.obj
+.\Debug\ObjImp_2.obj
+.\Debug\ParseMD3.obj
+\Source\lw_sdk6\server\Debug\server.lib
+]
+Creating command line "link.exe @E:\DOCUME~1\mike\LOCALS~1\Temp\RSP25B.tmp"
+<h3>Output Window</h3>
+Compiling...
+LoadQuakeMD.c
+k:\source\loadmd3\loadquakemd.c(8) : fatal error C1083: Cannot open include file: 'lwmod.h': No such file or directory
+MeshEdt.cpp
+K:\Source\LoadMd3\MeshEdt.cpp(8) : fatal error C1083: Cannot open include file: 'lwmod.h': No such file or directory
+ModelMD3.cpp
+K:\Source\LoadMd3\ModelMD3.cpp(3) : fatal error C1083: Cannot open include file: 'lwmod.h': No such file or directory
+ObjImp.cpp
+K:\Source\LoadMd3\ObjImp.cpp(3) : fatal error C1083: Cannot open include file: 'lwmod.h': No such file or directory
+Error executing cl.exe.
+Creating command line "bscmake.exe /nologo /o"Debug/ModelerLoadMD3.bsc"  .\Debug\LoadQuakeMD.sbr .\Debug\LWPlugBase.sbr .\Debug\MeshEdt.sbr .\Debug\MeshEdt_2.sbr .\Debug\ModelMD3.sbr .\Debug\ObjImp.sbr .\Debug\ObjImp_2.sbr .\Debug\ParseMD3.sbr"
+Creating browse info file...
+BSCMAKE: error BK1506 : cannot open file '.\Debug\LoadQuakeMD.sbr': No such file or directory
+Error executing bscmake.exe.
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+LoadQuakeMD.p - 5 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

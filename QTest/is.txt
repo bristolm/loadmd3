@@ -1,0 +1,204 @@
+Unreal Tournament [(c) EpicGames] Skeletal model format checker 
+- v0.5.97 - mbristol@bellatlantic.net
+X:/LW_Content/Unreal/Models/MeshTest
+[file=	X:/LW_Content/Unreal/Models/MeshTest.psk]
+Frames:		0
+Points:		574
+Triangles:	1091
+UV Wedges:	3273
+Weights:	678
+Material:	1
+	   [1091 Triangles]:	Mat00-SKIN0
+				 Normal, One sided
+				  + Flat Polygon
+				  + Alpha Mapped
+Bones:	47
+	00:	Bip01                           
+		  Parent=00, 1 kid, 0 points affected
+		  Rest Loc:	(0.012, 1.925, 148.258)
+		  Rest Dir:	(0.000, 0.000, -0.707) 0.707
+	01:	Bip01 Pelvis                    
+		  Parent=00, 1 kid, 51 points affected
+		  Rest Loc:	(0.483, 0.000, 0.000)
+		  Rest Dir:	(-0.500, 0.500, -0.500) 0.500
+	02:	Bip01 Spine                     
+		  Parent=01, 3 kids, 3 points affected
+		  Rest Loc:	(16.986, -0.003, 0.000)
+		  Rest Dir:	(0.000, 0.000, -0.066) 0.998
+	03:	Bip01 Spine1                    
+		  Parent=02, 1 kid, 11 points affected
+		  Rest Loc:	(4.088, -0.022, 0.000)
+		  Rest Dir:	(0.000, 0.000, 0.000) 1.000
+	04:	Bip01 Spine2                    
+		  Parent=03, 1 kid, 118 points affected
+		  Rest Loc:	(27.784, -0.022, 0.000)
+		  Rest Dir:	(0.000, 0.000, 0.182) 0.983
+	05:	Bip01 Neck                      
+		  Parent=04, 3 kids, 0 points affected
+		  Rest Loc:	(29.078, -0.004, 0.000)
+		  Rest Dir:	(0.000, 0.000, -0.246) 0.969
+	06:	Bip01 Neck1                     
+		  Parent=05, 1 kid, 1 points affected
+		  Rest Loc:	(6.006, -0.005, 0.000)
+		  Rest Dir:	(0.000, 0.000, 0.039) 0.999
+	07:	Bip01 Head                      
+		  Parent=06, 1 kid, 72 points affected
+		  Rest Loc:	(5.892, -0.000, 0.000)
+		  Rest Dir:	(0.000, 0.000, 0.000) 1.000
+	08:	Dummy07                         
+		  Parent=07, 0 kids, 0 points affected
+		  Rest Loc:	(30.835, -0.000, -0.000)
+		  Rest Dir:	(0.000, 0.000, 0.000) 1.000
+	09:	Bip01 L Clavicle                
+		  Parent=05, 2 kids, 3 points affected
+		  Rest Loc:	(0.000, 0.005, 7.166)
+		  Rest Dir:	(1.204, 0.815, 1.626) 0.134
+	10:	Bip01 L UpperArm                
+		  Parent=09, 1 kid, 22 points affected
+		  Rest Loc:	(25.655, -0.000, -0.000)
+		  Rest Dir:	(0.378, -0.293, -0.328) 0.848
+	11:	Bip01 L Forearm                 
+		  Parent=10, 1 kid, 35 points affected
+		  Rest Loc:	(37.002, 0.000, 0.000)
+		  Rest Dir:	(0.000, 0.000, 0.139) 0.990
+	12:	Bip01 L Hand                    
+		  Parent=11, 2 kids, 9 points affected
+		  Rest Loc:	(40.399, -0.000, -0.000)
+		  Rest Dir:	(-0.700, -0.102, 0.101) 0.700
+	13:	Bip01 L Finger0                 
+		  Parent=12, 1 kid, 1 points affected
+		  Rest Loc:	(1.778, 3.491, -6.235)
+		  Rest Dir:	(0.637, 0.091, -0.267) 0.530
+	14:	Bip01 L Finger01                
+		  Parent=13, 1 kid, 5 points affected
+		  Rest Loc:	(7.186, 0.000, 0.000)
+		  Rest Dir:	(0.000, 0.000, -0.156) 0.988
+	15:	Bip01 L Finger02                
+		  Parent=14, 1 kid, 6 points affected
+		  Rest Loc:	(6.664, 0.000, 0.000)
+		  Rest Dir:	(0.000, 0.000, 0.052) 0.999
+	16:	Dummy03                         
+		  Parent=15, 0 kids, 0 points affected
+		  Rest Loc:	(7.213, 0.000, 0.000)
+		  Rest Dir:	(0.000, 0.000, 0.000) 1.000
+	17:	Bip01 L Finger1                 
+		  Parent=12, 1 kid, 6 points affected
+		  Rest Loc:	(18.669, -0.744, -0.179)
+		  Rest Dir:	(-0.000, -0.000, -0.221) 0.975
+	18:	Bip01 L Finger11                
+		  Parent=17, 1 kid, 6 points affected
+		  Rest Loc:	(8.264, -0.000, -0.000)
+		  Rest Dir:	(0.000, 0.000, -0.105) 0.995
+	19:	Bip01 L Finger12                
+		  Parent=18, 1 kid, 0 points affected
+		  Rest Loc:	(8.264, -0.000, 0.000)
+		  Rest Dir:	(0.000, 0.000, 0.000) 1.000
+	20:	Dummy04                         
+		  Parent=19, 0 kids, 0 points affected
+		  Rest Loc:	(1.401, 0.000, 0.000)
+		  Rest Dir:	(0.000, 0.000, 0.000) 1.000
+	21:	Bone_L_shoulder                 
+		  Parent=09, 1 kid, 0 points affected
+		  Rest Loc:	(20.049, -2.615, 3.987)
+		  Rest Dir:	(0.143, 0.084, 0.105) 0.983
+	22:	Dummy08                         
+		  Parent=21, 0 kids, 0 points affected
+		  Rest Loc:	(35.096, 0.144, 0.332)
+		  Rest Dir:	(0.707, 0.000, 0.000) 0.707
+	23:	Bip01 R Clavicle                
+		  Parent=05, 2 kids, 0 points affected
+		  Rest Loc:	(0.000, 0.005, -7.166)
+		  Rest Dir:	(-1.203, -0.815, 1.626) 0.134
+	24:	Bip01 R UpperArm                
+		  Parent=23, 1 kid, 23 points affected
+		  Rest Loc:	(25.655, 0.000, 0.000)
+		  Rest Dir:	(-0.378, 0.293, -0.328) 0.848
+	25:	Bip01 R Forearm                 
+		  Parent=24, 1 kid, 35 points affected
+		  Rest Loc:	(37.002, 0.000, 0.000)
+		  Rest Dir:	(0.000, 0.000, 0.139) 0.990
+	26:	Bip01 R Hand                    
+		  Parent=25, 2 kids, 9 points affected
+		  Rest Loc:	(40.399, -0.000, 0.000)
+		  Rest Dir:	(0.700, 0.102, 0.101) 0.700
+	27:	Bip01 R Finger0                 
+		  Parent=26, 1 kid, 1 points affected
+		  Rest Loc:	(1.778, 3.491, 6.235)
+		  Rest Dir:	(-0.637, -0.091, -0.267) 0.530
+	28:	Bip01 R Finger01                
+		  Parent=27, 1 kid, 6 points affected
+		  Rest Loc:	(7.186, 0.000, -0.000)
+		  Rest Dir:	(0.000, 0.000, -0.156) 0.988
+	29:	Bip01 R Finger02                
+		  Parent=28, 1 kid, 5 points affected
+		  Rest Loc:	(6.664, -0.000, 0.000)
+		  Rest Dir:	(0.000, 0.000, 0.052) 0.999
+	30:	Dummy01                         
+		  Parent=29, 0 kids, 0 points affected
+		  Rest Loc:	(7.213, -0.000, 0.000)
+		  Rest Dir:	(0.000, 0.000, 0.125) 0.000
+	31:	Bip01 R Finger1                 
+		  Parent=26, 1 kid, 5 points affected
+		  Rest Loc:	(18.669, -0.744, 0.179)
+		  Rest Dir:	(0.000, 0.000, -0.221) 0.975
+	32:	Bip01 R Finger11                
+		  Parent=31, 1 kid, 7 points affected
+		  Rest Loc:	(8.264, 0.000, 0.000)
+		  Rest Dir:	(0.000, 0.000, -0.105) 0.995
+	33:	Bip01 R Finger12                
+		  Parent=32, 1 kid, 0 points affected
+		  Rest Loc:	(8.264, -0.000, -0.000)
+		  Rest Dir:	(0.000, 0.000, 0.000) 1.000
+	34:	Dummy02                         
+		  Parent=33, 0 kids, 0 points affected
+		  Rest Loc:	(1.401, 0.000, 0.000)
+		  Rest Dir:	(0.000, 0.000, 0.125) 0.000
+	35:	Bone_R_shoulder                 
+		  Parent=23, 1 kid, 0 points affected
+		  Rest Loc:	(20.008, -2.607, -3.978)
+		  Rest Dir:	(-0.113, 0.192, -1.311) 0.079
+	36:	Dummy09                         
+		  Parent=35, 0 kids, 0 points affected
+		  Rest Loc:	(-35.127, -0.144, -0.332)
+		  Rest Dir:	(-0.707, 0.000, 0.000) 0.707
+	37:	Bip01 L Thigh                   
+		  Parent=02, 1 kid, 48 points affected
+		  Rest Loc:	(-16.839, 2.234, 17.514)
+		  Rest Dir:	(0.082, 1.002, 0.002) 0.093
+	38:	Bip01 L Calf                    
+		  Parent=37, 1 kid, 51 points affected
+		  Rest Loc:	(61.670, 0.000, -0.000)
+		  Rest Dir:	(0.000, 0.000, 0.161) 0.987
+	39:	Bip01 L Foot                    
+		  Parent=38, 1 kid, 10 points affected
+		  Rest Loc:	(63.467, 0.000, 0.000)
+		  Rest Dir:	(-0.004, 0.094, -0.142) 0.985
+	40:	Bip01 L Toe0                    
+		  Parent=39, 1 kid, 10 points affected
+		  Rest Loc:	(28.635, 25.240, -0.000)
+		  Rest Dir:	(0.000, 0.000, -0.707) 0.707
+	41:	Dummy06                         
+		  Parent=40, 0 kids, 0 points affected
+		  Rest Loc:	(20.408, 0.000, 0.000)
+		  Rest Dir:	(0.000, 0.000, 0.125) 0.000
+	42:	Bip01 R Thigh                   
+		  Parent=02, 1 kid, 48 points affected
+		  Rest Loc:	(-16.839, 2.234, -17.514)
+		  Rest Dir:	(-0.082, -1.002, 0.002) 0.093
+	43:	Bip01 R Calf                    
+		  Parent=42, 1 kid, 51 points affected
+		  Rest Loc:	(61.670, 0.000, -0.000)
+		  Rest Dir:	(0.000, 0.000, 0.161) 0.987
+	44:	Bip01 R Foot                    
+		  Parent=43, 1 kid, 10 points affected
+		  Rest Loc:	(63.467, 0.000, 0.000)
+		  Rest Dir:	(0.004, -0.094, -0.142) 0.985
+	45:	Bip01 R Toe0                    
+		  Parent=44, 1 kid, 10 points affected
+		  Rest Loc:	(28.635, 25.240, -0.000)
+		  Rest Dir:	(0.000, 0.000, -0.707) 0.707
+	46:	Dummy05                         
+		  Parent=45, 0 kids, 0 points affected
+		  Rest Loc:	(20.408, 0.000, -0.000)
+		  Rest Dir:	(0.000, 0.000, 0.000) 1.000
+Animation Sequences:	0

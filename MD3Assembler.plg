@@ -1,0 +1,47 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: MD3Assembler - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "K:\temp\RSP34.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /FR"Debug/" /Fp"Debug/MD3Assembler.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ  /c 
+"J:\Program Files\Microsoft Visual Studio\MyProjects\LW_SDK\sample\common\LoadMd3\LWOtoMD3.cpp"
+"J:\Program Files\Microsoft Visual Studio\MyProjects\LW_SDK\sample\common\LoadMd3\ParseLWO.cpp"
+"J:\Program Files\Microsoft Visual Studio\MyProjects\LW_SDK\sample\common\LoadMd3\ParseMD3.cpp"
+]
+Creating command line "cl.exe @K:\temp\RSP34.tmp" 
+Creating temporary file "K:\temp\RSP35.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/MD3Assembler.pdb" /debug /machine:I386 /out:"MD3Assembler.exe" /pdbtype:sept 
+".\Debug\LWOtoMD3.obj"
+".\Debug\ParseLWO.obj"
+".\Debug\ParseMD3.obj"
+]
+Creating command line "link.exe @K:\temp\RSP35.tmp"
+<h3>Output Window</h3>
+Compiling...
+LWOtoMD3.cpp
+j:\program files\microsoft visual studio\myprojects\lw_sdk\sample\common\loadmd3\lwotomd3.cpp(347) : warning C4244: '=' : conversion from 'float' to 'short', possible loss of data
+j:\program files\microsoft visual studio\myprojects\lw_sdk\sample\common\loadmd3\lwotomd3.cpp(348) : warning C4244: '=' : conversion from 'float' to 'short', possible loss of data
+j:\program files\microsoft visual studio\myprojects\lw_sdk\sample\common\loadmd3\lwotomd3.cpp(349) : warning C4244: '=' : conversion from 'float' to 'short', possible loss of data
+j:\program files\microsoft visual studio\myprojects\lw_sdk\sample\common\loadmd3\lwotomd3.cpp(379) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+j:\program files\microsoft visual studio\myprojects\lw_sdk\sample\common\loadmd3\lwotomd3.cpp(380) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+ParseLWO.cpp
+ParseMD3.cpp
+Linking...
+LINK : LNK6006: program database J:\Program Files\Microsoft Visual Studio\MyProjects\LW_SDK\sample\common\LoadMd3\Debug\MD3Assembler.pdb missing; performing full link
+Creating command line "bscmake.exe /nologo /o"Debug/MD3Assembler.bsc"  ".\Debug\LWOtoMD3.sbr" ".\Debug\ParseLWO.sbr" ".\Debug\ParseMD3.sbr""
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+MD3Assembler.exe - 0 error(s), 5 warning(s)
+</pre>
+</body>
+</html>

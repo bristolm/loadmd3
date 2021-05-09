@@ -1,0 +1,267 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="generator" content="NoteTab Light 4.81">
+   <meta name="author" content="BlazeQ">
+   <meta name="description" content="This is a tutorial  by BlazeQ on converting Lightwave's LWO files to Quake3Arena's MD3 using Mike Bristol's LWOtoMD3 Exporter">
+   <meta name="keywords" content="blazeq, lightwave, quake, model, tutorial, lwo, md3">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (Win98; I) [Netscape]">
+   <title>A Tutorial on Mike Bristol's LWOtoMD3 Compiler by BlazeQ</title>
+<link REV="made" HREF="mailto:blazeq@visto.com">
+</head>
+<body text="#FF8C00" bgcolor="#000000" link="#1E90FF" vlink="#1E90FF" alink="#1E90FF" bgproperties="fixed">
+
+<center>
+<h1>
+<font face="Arial,Helvetica"><font color="#3366FF"><font size=+2>Mike Bristol's
+LWOtoMD3 Compiler Tutorial by BlazeQ</font></font></font></h1></center>
+
+<blockquote> 
+  <p>&nbsp; <br>
+    <font face="Arial,Helvetica"><font color="#FF9900">First of all, thanks to 
+    <a href="mailto:mbristol@bellatlantic.net">Mike Bristol</a> for making the 
+    compiler, it makes everything so much easier. This tutorial is dedicated to 
+    Frankie, tpe and all the other LightWave users.</font></font></p>
+  <p><font face="Arial,Helvetica"><font color="#FF9900">The <a href="#Part1">first 
+    part</a> covers the basics of loading and exporting an old MD3 into a LWO 
+    file.<br>
+    The <a href="#Part2">second part</a> tells how the model should be set up 
+    for exporting.<br>
+    The <a href="#Part3">third part</a> is how to compile a single framed LWO 
+    file into an MD3.<br>
+    The <a href="#Part4">fourth part</a> is for making animations, tags and multiple 
+    mesh's.</font></font> </p>
+  <p><font face="Arial,Helvetica">The compiler version I use in this tut is 0.05.02, 
+    get it <a href="http://members.bellatlantic.net/~mbristol">here</a></font> 
+  <p>&nbsp; 
+  <hr>
+  <p>&nbsp; 
+  <p><a NAME="Part1"></a><font face="Arial,Helvetica"><font color="#3366FF"><font size=+2>Part 
+    1: Importing MD3's</font></font></font> 
+  <p><font face="Arial,Helvetica">[In Modeler] Make sure the <font color="#0080FF">loadquakemd</font> 
+    plug-in is is loaded and run it. Load up your md3, and save it as a LWO file.</font> 
+  <ul>
+    <p><font face="Arial,Helvetica">HOW:</font> <br>
+      <font face="Arial,Helvetica">Click <font color="#0080FF">Modeler</font>><font color="#0080FF">Plug-ins</font>><font color="#0080FF">Add 
+      Plug-ins... </font>then browse to <font color="#0080FF">C:\unzipped\lwotomd3\ 
+      </font><font color="#CC6600">(or where ever you unzipped the compiler)</font> 
+      and select<font color="#0080FF"> loadquakemd.p</font></font> <br>
+      <font face="Arial,Helvetica">Run it by selecting&nbsp; <font color="#0080FF">File</font>><font color="#0080FF">Load 
+      Object...</font>, selecting <font color="#0080FF">All Files</font>&nbsp; 
+      from the pull-down menu at the bottom of the pop-up box, and then browsing 
+      to an MD3 and opening it. Choose a frame and hit OK. Now you should have 
+      the model in view. Select <font color="#0080FF">File</font>><font color="#0080FF">Save</font> 
+      or hit <font color="#0080FF">s </font>to save as a LWO.</font> </p>
+    <p>&nbsp; </p>
+  </ul>
+  <hr>
+  <p><a name="Part2"></a><font face="Arial,Helvetica"><font color="#3366FF"><font size=+2>Part 
+    2: Getting the model ready</font></font></font> </p>
+  <p><font face="Arial,Helvetica">[In Modeler] Below are the general steps I use 
+    to prepare my models:</font> 
+  <blockquote> 
+    <p><font face="Arial, Helvetica, sans-serif">First, you should have the model 
+      split up into three files <font color="#CC6600">(layers might work too)</font>. 
+      One for the head, one for the upper, and one for the lower.</font></p>
+    <p><font face="Arial, Helvetica, sans-serif">Second</font><font face="Arial, Helvetica, sans-serif">, 
+      in each file, divide the model up into seperate 'meshes' using the <font color="#0080ff">Unweld</font> 
+      <font color="#CC6600">(CTRL+U)</font> command. These are split up according 
+      to which need to be uncontinous <font color="#CC6600">(i.e. the UVmap of 
+      a bottom of a can would need to be seperate from the UVmap of the sides; 
+      so the adjoining points would be unwelded on the model)</font>.</font></p>
+    <p><font face="Arial, Helvetica, sans-serif">Third, decide what meshes will 
+      be part of what 'pieces' in the MD3</font></p>
+    <blockquote> 
+      <p><font face="Arial, Helvetica, sans-serif">EXAMPLE: I pulled up Doom's 
+        helmet in Npherno's MD3 Complier. It consists of three 'pieces': <font color="#0080ff">h_helmet</font>, 
+        <font color="#0080ff">h_visor</font> and <font color="#0080ff">tag_head</font>. 
+        Each piece gets it's image linked in it's Q3A config file.</font></p>
+    </blockquote>
+    <p><font face="Arial, Helvetica, sans-serif">Fourth, based upon your decision, 
+      seperately select each piece-to-be and create a UVmap for it. If you want 
+      two pieces in the MD3 <font color="#CC6600">(excluding the tags)</font> 
+      you would create two UVmaps, etc...</font></p>
+    <blockquote>
+      <p><font face="Arial, Helvetica, sans-serif">EXAMPLE: Here's a rocket box: 
+        <a href="files/rb.jpg">pic</a> And here are it's 3 UVmaps: <a href="files/rm1.jpg">1</a>, 
+        <a href="files/rm2.jpg">2</a>, <a href="files/rm3.jpg">3</a>. All of which 
+        share the same image.</font></p>
+    </blockquote>
+    <p><font face="Arial, Helvetica, sans-serif">Fifth <font color="#CC6600">(optional)</font>, 
+      make the polys of each UVmap a seperate Surface. That way you're sure in 
+      which piece each poly is going.</font></p>
+    <p><font face="Arial, Helvetica, sans-serif">Sixth, I create tags <font color="#CC6600">(single-sided-right-triangle-polygons)</font> 
+      polys and put them in their respective places. Every tag has it's own Surface. 
+      The head tag's Surface would be named <font color="#0080ff">tag_head</font>, 
+      the weapon tag's Surface would be named <font color="#0080ff">tag_weapon</font> 
+      and so on and so forth.</font></p>
+    <p><font face="Arial, Helvetica, sans-serif">Whew! That's it, now you move 
+      on to Part 3 or Part 4, depending on what you are making.</font></p>
+  </blockquote>
+  <hr>
+  <p>&nbsp;</p>
+  <a NAME="Part3"></a><font face="Arial,Helvetica"><font color="#3366FF"><font size=+2>Part 
+  3: Single MD3's</font></font></font> 
+  <p><font face="Arial,Helvetica">[In Notepad] Create a CFG file for your model 
+    and paste <a href="files/keycard.cfg">this</a> code into it. Replace everything 
+    with your own LWO file properties and save as <font color="#0080FF">yourmodelsname.cfg</font> 
+    in the same directory as <font color="#0080FF">LWOtoMD3.exe</font>.</font> 
+  <ul>
+    <font face="Arial,Helvetica">HOW:</font> <br>
+    <font face="Arial,Helvetica">CFG files are text documents, all you have to 
+    do is create one and put a CFG extension on the end instead of TXT.</font> 
+    <p><font face="Arial,Helvetica">CODE DESCRIPTION:</font> <br>
+      <font face="Arial,Helvetica">MD3</font> <br>
+      <font face="Arial,Helvetica"><font color="#0080FF">name</font> is the name 
+      of the file that the compiler saves the file as.</font> <br>
+      <font face="Arial,Helvetica"><font color="#0080FF">filedir</font> is where 
+      you have the LWO files that the compiler uses.</font> <br>
+      &nbsp; 
+    <ul>
+      <font face="Arial,Helvetica">MESH</font> <br>
+      <font face="Arial,Helvetica"><font color="#0080FF">name</font> is the name 
+      of the 'piece' in the to-be-created MD3 file. To change the name of the 
+      piece in the MD3 file, use <font color="#0080FF">Npherno's MD3 Compiler 
+      </font>or just recompile it with <font color="#0080FF">LWOtoMD3</font>.</font><br>
+      <font face="Arial,Helvetica"><font color="#0080FF">images</font> is the 
+      information about the path that Q3A needs to put the skin on the model.</font> 
+      <br>
+      <font face="Arial,Helvetica"><font color="#0080FF">txuv</font> is the UVmap 
+      name.</font> 
+      <p><font face="Arial,Helvetica">FILELIST</font> <br>
+        <font face="Arial,Helvetica"><font color="#0080FF">single</font> is the 
+        name of your LWO file.</font> 
+    </ul>
+  </ul>
+  <p><br>
+    <font face="Arial,Helvetica">[In the Run command] Execute LWOtoMD3 and build 
+    your MD3</font> 
+  <blockquote><font face="Arial,Helvetica">HOW:</font> <br>
+    <font face="Arial,Helvetica">Select from the taskbar menu&nbsp; <font color="#0080FF">Start 
+    </font>> <font color="#0080FF">Run...</font> > <font color="#0080FF">Browse</font> 
+    and then find and double-click on<font color="#0080FF"> LWOtoMD3.exe</font>. 
+    After <font color="#0080FF">LWOtoMD3.exe</font> type in a [<font color="#0080FF">space</font>] 
+    and <font color="#0080FF">yourmodelsname.cfg </font>and press [<font color="#0080FF">enter</font>]</font></blockquote>
+  <font face="Arial,Helvetica">Ignore any message it spits out about "surfaces 
+  and uv maps are bad" - Mike said he screwed up a check in the code.</font> 
+  <p><font face="Arial,Helvetica">The MD3 should appear in the LWOtoMD3 directory. 
+    Check with Windows Explorer and see. Next open it up in an MD3 viewer. I find 
+    <a href="http://www.planetquake.com/qview/">Qview</a> to be quite good in 
+    it being fast and simple. But <font color="#0080FF">Npherno's MD3 Viewer</font> 
+    is better <i>imho</i>.</font> <br>
+    &nbsp; <br>
+    &nbsp; 
+  <hr>
+  <p>&nbsp;</p>
+  <p><a NAME="Part4"></a><font face="Arial,Helvetica"><font color="#3366FF"><font size=+2>Part 
+    4: Animated MD3's</font></font></font> 
+  <p><font face="Arial,Helvetica">[In Layout]&nbsp; Use the <font color="#0080FF">SaveMorph</font> 
+    plug-in to write each frame of your animated model <font color="#CC6600">(upper 
+    and lower separetly)</font> in a seperate LWO file. I would recommend using 
+    a seperate folder for these from the files you are working with as they tend 
+    to pile up.</font> 
+  <blockquote><font face="Arial,Helvetica">HOW:</font> <br>
+    <font face="Arial,Helvetica"><font color="#0080FF">SaveMorph</font> is located 
+    in the <font color="#0080FF">Object Properties</font> panel, press <font color="#0080FF">p</font> 
+    to open it with your object selected. Go to the <font color="#0080FF">Deformations</font> 
+    tab and add <font color="#0080FF">SafeMorph</font>. Open the plug-in, enable 
+    it, point it to where you want it to go, type <font color="#0080FF">4</font> 
+    in for the number of digits, and select <font color="#0080FF">World Coordinates</font>. 
+    Press OK, make sure it's on and then select <font color="#0080FF">Make Preview</font> 
+    from the pull-down list in the bottom right corner.</font> 
+    <p><font face="Arial,Helvetica">Note: <font color="#0080FF">SafeMorph</font> 
+      aparently is not included with LW6.5. To add it browse to the folder <font color="#0080FF">Old 
+      Plugins</font> after clicking <font color="#0080FF">Add Plugins</font>, 
+      it may not work though. Another thing I've heard you can use is <font color="#0080FF">Project:Messiah 
+      </font>or <font color="#0080FF">Layout</font>><font color="#0080FF">Save</font>><font color="#0080FF">As 
+      Transformed Object</font></font> 
+  </blockquote>
+  <font face="Arial,Helvetica">[In Notepad] Create three CFG files for your model 
+  and paste <a href="files/nec_upper.cfg">this</a> in one and <a href="files/nec_lower.cfg">this</a> 
+  in the other <font color="#CC6600">(for the head, since it has no anims, you 
+  would use the same CFG type as the one in Part 2 with a TAG array)</font>. Replace 
+  everything with your own LWO file properties and save as <font color="#0080FF">yourmodelsname_bodypart.cfg</font> 
+  in the same directory as <font color="#0080FF">LWOtoMD3.exe</font>.</font> 
+  <ul>
+    <font face="Arial,Helvetica">HOW:</font> <br>
+    <font face="Arial,Helvetica">CFG files are text documents, all you have to 
+    do is create one and put a CFG extension on the end instead of TXT.</font> 
+    <p><font face="Arial,Helvetica">CODE DESCRIPTION:</font> <br>
+      <font face="Arial,Helvetica">MD3</font> <br>
+      <font face="Arial,Helvetica"><font color="#0080FF">name</font> is the name 
+      of the file that the compiler saves the file as.</font> <br>
+      <font face="Arial,Helvetica"><font color="#0080FF">filedir</font> is where 
+      you have the LWO files that the compiler uses.</font> <br>
+      &nbsp; 
+    <ul>
+      <font face="Arial,Helvetica">MESH</font> <br>
+      <font face="Arial,Helvetica"><font color="#0080FF">name</font> is the name 
+      of the 'piece' in the to-be-created MD3 file. To change the name of the 
+      piece in the MD3 file, use <font color="#0080FF">Npherno's MD3 Compiler 
+      </font>or just recompile it with <font color="#0080FF">LWOtoMD3</font>.</font> 
+      <br>
+      <font face="Arial,Helvetica"><font color="#0080FF">images</font> this is 
+      not needed for a player model since it uses a Q3A cfg.</font><br>
+      <font face="Arial,Helvetica"><font color="#0080FF">txuv</font> is the UVmap 
+      name. Obviously, it contains the UV coordinates. It also shows which polys 
+      go with the associated mesh name in the MD3 file.</font> 
+      <p><font face="Arial,Helvetica">TAG</font> <br>
+        <font face="Arial,Helvetica"><font color="#0080FF">name</font> is the 
+        name of the tag in the LWO file. To put a tag in LW copy in <font color="#0080FF">q3_tag.lwo</font> 
+        from the LWOtoMD3 dir into Modeler and change the Surface name.</font> 
+      <p><font face="Arial,Helvetica">FILELIST</font> <br>
+        <font face="Arial,Helvetica"><font color="#0080FF">base</font> is the 
+        name of your LWO file that the compiler uses to write the UVmap and to 
+        check all the other files to make sure they have the same amount of polys, 
+        etc.</font> <br>
+        <font face="Arial,Helvetica"><font color="#0080FF">range</font> is used 
+        to define the base name <font color="#CC6600">(U_death1_0000.lwo in the 
+        case of Nec_upper.cfg)</font>,</font> <br>
+        <font face="Arial,Helvetica">the starting file <font color="#CC6600">(0 
+        would be U_death1_0000, 5 would be U_death1_0005)</font>,</font> <br>
+        <font face="Arial,Helvetica">and the number of frames to compile <font color="#CC6600">(remember 
+        if 0 is a frame and you have up to frame 29, you would put 30 frames)</font></font> 
+        <br>
+        &nbsp; 
+    </ul>
+    <font face="Arial,Helvetica">Note: for multiple meshes create a MESH array 
+    for each.</font> 
+  </ul>
+  <p><br>
+    <font face="Arial,Helvetica">[In the Run command] Execute LWOtoMD3 twice and 
+    build your MD3's</font> 
+  <blockquote><font face="Arial,Helvetica">HOW:</font> <br>
+    <font face="Arial,Helvetica">Select from the taskbar menu&nbsp; <font color="#0080FF">Start 
+    </font>> <font color="#0080FF">Run...</font> > <font color="#0080FF">Browse</font> 
+    and then find and double-click on<font color="#0080FF"> LWOtoMD3.exe</font>. 
+    After <font color="#0080FF">LWOtoMD3.exe</font> type in a [<font color="#0080FF">space</font>] 
+    and <font color="#0080FF">yourmodelsname_bodypart.cfg </font>and press [<font color="#0080FF">enter</font>]</font></blockquote>
+  <font face="Arial,Helvetica">Ignore any message it spits out about "surfaces 
+  and uv maps are bad" - Mike said he screwed up a check in the code.</font> 
+  <p><font face="Arial,Helvetica">The MD3's should appear in the LWOtoMD3 directory. 
+    Check with Windows Explorer and see. Next open them up in an MD3 viewer. I 
+    find <a href="http://www.planetquake.com/qview/">Qview</a> to be quite good 
+    in it being fast and simple. But <font color="#0080FF">Npherno's MD3 Viewer</font> 
+    is better <i>imho</i>.</font> 
+  <p><br>
+    &nbsp; <br>
+  <hr>
+  <p>&nbsp;</p>
+  <p><font face="Arial,Helvetica">For alot more information, read the three readmes 
+    that come with the compiler. I also included a 2 more CFGs just for reference: 
+    <a href="files/health_vial.cfg">health_vial.cfg </a>&amp; <a href="files/bullet_bag.cfg">bullet_bag.cfg</a></font> 
+    <br>
+    &nbsp; 
+</blockquote>
+
+<center>
+  <p><font face="Arial,Helvetica"><font size=-1>Created on 12-20-2000</font></font> 
+    <br>
+    <font face="Arial,Helvetica"><font size=-1>Updated on 5-27-2001</font></font></p>
+  <p><font face="Arial,Helvetica"><font size=-1>by <a href="mailto:blazeq@visto.com"><font color="#FF8C00">Blaze</font><font color="#0080FF">Q</font></a></font></font> 
+  </p>
+</center>
+
+</body>
+</html>

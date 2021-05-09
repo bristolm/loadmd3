@@ -1,0 +1,48 @@
+# Main include file
+
+### DIR setup ###############
+ifdef DJGPP
+DIRSEP = \\
+ROOT_DIR = K:$(DIRSEP)Source$(DIRSEP)LoadMD3$(DIRSEP)
+else
+DIRSEP = /
+ROOT_DIR = /mike/devq3/
+endif
+#############################
+
+INCLUDE_DIR = $(ROOT_DIR)include$(DIRSEP)
+LIB_DIR = $(ROOT_DIR)lib$(DIRSEP)
+
+## PROGRAM setup ############
+ifdef DJGPP
+CXX = K:\\usr\\djgpp\\bin\\gcc.exe -I $(INCLUDE_DIR)
+AR = K:\\usr\\djgpp\\bin\\ar.exe rvs 
+else
+CC = gcc
+CXX = g++ -I $(INCLUDE_DIR)
+AR = ar -ru
+endif
+#############################
+
+CP = cp
+RM = rm
+
+DIRQUAKEOBJS = $(ROOT_DIR)objQuake$(DIRSEP)
+LIBQUAKE = $(LIB_DIR)libQuake.a
+
+DIRLIGHTWAVEOBJS = $(ROOT_DIR)objLW$(DIRSEP)
+LIBLIGHTWAVE = $(LIB_DIR)libLW.a
+
+DIRUNREALOBJS = $(ROOT_DIR)objUnreal$(DIRSEP)
+LIBUNREAL = $(LIB_DIR)libUnreal.a
+
+DIRHALFLIFEOBJS = $(ROOT_DIR)objHalfLife$(DIRSEP)
+LIBHALFLIFE = $(LIB_DIR)libHalflife.a
+
+CXXFLAGS = -Wall
+
+LDFLAGS = -g
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
